@@ -1,0 +1,14 @@
+server:
+  port: 8765
+zuul:
+  prefix: /api
+  routes:
+    properties:
+      path: /properties/**
+      serviceId: spring-cloud-client-common
+    peopleOne:
+      path: /people-one/**
+      serviceId: spring-cloud-client-one
+    peopleTwo:
+      path: /people-two/**
+      serviceId: spring-cloud-client-two
