@@ -1,5 +1,8 @@
+spring:
+  application:
+    name: spring-cloud-api-gateway
 server:
-  port: 8765
+  port: 8083
 zuul:
   prefix: /api
   routes:
@@ -12,3 +15,12 @@ zuul:
     peopleTwo:
       path: /people-two/**
       serviceId: spring-cloud-client-two
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+ribbon:
+  eureka:
+    enabled: true
